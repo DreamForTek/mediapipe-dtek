@@ -107,7 +107,13 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
       }
     }
 
-    if(left_score>=right_score) isLeft=true;
+    if(left_score>=right_score){ 
+	score=left_score;
+	isLeft=true;
+    }
+    else{
+   	score=right_score;
+   }
 
     // LOG(INFO) << "handeness:"<<handeness;
 
@@ -119,7 +125,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     float width = rect->width();
     float height = rect->height();
 
-    if (width < 0.01 || height < 0.01)
+    if (width < 0.01 || height < 0.01 || score<0.9)
     {
         // LOG(INFO) << "No Hand Detected";
         recognized_hand_gesture = new std::string("___");

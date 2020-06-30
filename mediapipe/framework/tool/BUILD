@@ -42,6 +42,7 @@ cc_library(
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/framework/port:status",
     ],
+    linkopts = ["-lm"],
 )
 
 proto_library(
@@ -101,6 +102,7 @@ cc_binary(
     deps = [
         "@com_google_absl//absl/strings",
     ],
+    linkopts = ["-lm"],
 )
 
 cc_library(
