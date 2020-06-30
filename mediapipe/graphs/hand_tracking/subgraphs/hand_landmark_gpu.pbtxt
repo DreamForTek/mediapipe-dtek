@@ -229,3 +229,15 @@ node {
     }
   }
 }
+
+
+
+node {
+  calculator: "HandGestureRecognitionCalculator"
+  input_stream: "NORM_LANDMARKS:scaled_landmarks"
+  input_stream: "NORM_RECT:hand_rect_for_next_frame"
+  input_stream: "PRESENCE_SCORE:hand_presence_score"
+  input_stream: "HANDENESS:handedness"
+  
+  output_stream: "RECOGNIZED_HAND_GESTURE:recognized_hand_gesture"
+}
